@@ -1,0 +1,10 @@
+input {
+    width: 60px;
+    height: 40px;
+    background-color: aquamarine;
+    color: rgb(226, 66, 2);
+    font-size: 20px;
+    font-family: '隶书';
+    border: 2px solid green;
+    border-radius: 5px;
+}

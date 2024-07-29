@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>表单标签</title>
-  </head>
-  <body>
-    <!-- 表单标签
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>表单标签</title>
+</head>
+
+<body>
+  <!-- 表单标签
        form  
               action 定义数据的提交地址
                     url
@@ -34,17 +36,45 @@
                       password 密码
                       sumbit 提交按钮
                       reset  重置按钮
+                      radio  单选框
+                      checkbox 复选框
+                  hidden 隐藏不显示 会传递参数
+                  readonly 只读标记 会传参
+                  disabled 只显示标记 不传参
+            select 下拉列表
+                     option 下拉列表项
+            textarea 文本输入框
                     
       -->
-    <form action="./acceptwelcom.html" method="get">
-      账号:<input  type="text" name="username" value="zhangsan"/><br />
-      密&nbsp;&nbsp;码:
-      <input  type="password" name="password" value="123456"/><br />
-      性别:
-      <input type="radio" name="sex" value="1" checked="true">男
-      <input type="radio" name="sex" value="0">女
-      <input type="submit" value="登录" /><br />
-      <input type="reset" value="重置" />
-    </form>
-  </body>
+  <form action="./acceptwelcom.html" method="get">
+    <input type="text" hidden name="id" value="123">
+    <input type="text" name="dsno" value="123" readonly><br>
+    <input type="text" name="showno" value="456" disabled><br>
+    账号:<input type="text" name="username" value="zhangsan" /><br />
+    密&nbsp;&nbsp;码:
+    <input type="password" name="password" value="123456" /><br />
+    性别:
+    <input type="radio" name="sex" value="1" checked>男
+    <input type="radio" name="sex" value="0">女<br>
+    爱好:
+    <input type="checkbox" name="like" value="1">游戏
+    <input type="checkbox" name="like" value="2">登山
+    <input type="checkbox" name="like" value="3">游泳
+    <input type="checkbox" name="like" value="4">音乐
+    <input type="checkbox" name="like" value="5">影视<br>
+    籍贯:
+    <select name="jg">
+      <option value="1">北京</option>
+      <option value="2">上海</option>
+      <option value="3">南京</option>
+      <option value="4">重庆</option>
+      <option value="0" selected>请选择</option>
+    </select><br>
+    简历:
+    <textarea name="context" id="person" style="width: 300px ; height: 100px;">123</textarea><br>
+    <input type="submit" value="登录" /><br />
+    <input type="reset" value="重置" />
+  </form>
+</body>
+
 </html>

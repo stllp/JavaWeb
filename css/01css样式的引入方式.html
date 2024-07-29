@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css样式的引入方式</title>
+    <!-- 内嵌式 -->
+    <style>
+        input {
+            width: 60px;
+            height: 40px;
+            background-color: aquamarine;
+            color: rgb(226, 66, 2);
+            font-size: 20px;
+            font-family: '隶书';
+            border: 2px solid green;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 引入方式
+        1、行内式
+            通过元素的style属性引入
+            缺点：1、代码复用率低，不利于维护
+                2、css样式代码和html结构代码交织在一起，影响阅读，影响文件大小，影响速度
+        2、内嵌式
+        3、外部样式表
+           将CSS代码单独放入一个.css文件中，哪个文件需要这些样式 就引入<link rel="stylesheet" href="btn.css">
+      -->
+    <!-- 行内式 -->
+    <input type="button" value="按钮" style="
+    width: 60px;
+    height: 40px;
+    background-color: aquamarine;
+    color: white;
+    font-size: 20px;
+    font-family: '隶书';
+    border: 2px solid green;
+    border-radius: 5px;
+    ">
+    <input type="button" value="按钮">
+    <input type="button" value="按钮">
+    <input type="button" value="按钮">
+    <input type="button" value="按钮">
+    <input type="button" value="按钮">
+</body>
+
+</html>
