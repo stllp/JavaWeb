@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表格标签</title>
+  </head>
+  <body>
+    <!-- 表格标签 
+       table  整张表格
+            thead 表头
+            tbody 表体
+            tfoot 表尾
+               tr 行
+               td 列
+                  rowspan 行合并
+                  colspan 列合并
+     -->
+    <h3 style="text-align: center">员工技能竞赛评分表</h3>
+    <table border="1px" style="margin: 0px auto; width: 300px">
+      <thead>
+        <tr>
+          <td>排名</td>
+          <td>姓名</td>
+          <td>分数</td>
+          <td>备注</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <tr>
+        <td>1</td>
+        <td>小米</td>
+        <td>80</td>
+        <td rowspan="6">前三名升职加薪</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>小明</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>小冬</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td >总人数</td>
+        <td colspan="2">200</td>
+      </tr>
+      <tr>
+        <td>平均分</td>
+        <td colspan="2">90</td>
+      </tr>
+      <tr>
+        <td>及格率</td>
+        <td colspan="2">60%</td>
+      </tr>
+      <tfoot>
+        <tr>
+          <td>完</td>
+          </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

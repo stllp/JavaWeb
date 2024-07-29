@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    超链接标签
+      a
+          href 用于定义要跳转的目标资源地址
+            1：完整的url地址 如：https://www.baidu.com/
+            2：相对路径  以当前资源所在路径为出发点去找目标资源
+                      ./ 表示当前资源所在路径 可以省略不写
+                      ../表示当前资源所在路径的上一层路径，需要时必须写出
+            3：绝对路径
+          target 用于定义目标资源地址的打开方式
+            _self 当前窗口打开
+            _blank 另开窗口打开
+     -->
+    <a href="https://www.baidu.com/" target="_self">百度</a>
+    <a href="https://www.baidu.com/" target="_blank">百度</a>
+    <br>
+    <!-- 相对路径 ./-->
+    <a href="./a/超链接测试.html" target="_self">超链接测试</a>
+    <!-- 绝对路径 -->
+    <a href="/html/a/超链接测试.html" target="_self">超链接测试</a>
+</body>
+</html>
