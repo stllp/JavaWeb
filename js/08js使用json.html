@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+    JSON格式的语法
+    var personSStr ='{"属性名":"属性值"，"属性名":"属性值"，"属性名":{}，"属性名":["","",""],"属性名":[{},{},{}]}'
+    1、属性名-必须被""包裹
+    2、属性值-字符串必须被""包裹  数字可以不处理
+     -->
+    <script>
+        var personStr = '{"name":"张三","age":10,"dog":{"dgname":"大黄"},"friends":["小明","小红","小王"],"love":[{"lname":"篮球","singer":"乔丹"}]}'
+
+        console.log(typeof personStr)
+        console.log(personStr)
+        console.log(personStr.name) //字符串不能访问属性
+        // JSON字符串转化未对象
+        var person = JSON.parse(personStr)
+        console.log(typeof person)
+        console.log(person)
+        console.log(person.name)
+        //对象 转化未 JSON 字符串
+        var personStr1 = JSON.stringify(person)
+        console.log(typeof personStr1)
+        console.log(personStr1)
+        console.log(personStr1.name)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

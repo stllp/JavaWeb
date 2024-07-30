@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1() {
+            console.log("你点击了按钮")
+        }
+        function fun2() {
+            console.log("你又点击了按钮")
+        }
+        function fun3() {
+            console.log("你双击了按钮")
+        }
+        function fun4() {
+            console.log("鼠标悬停了")
+        }
+        function fun5() {
+            console.log("鼠标移动了")
+        }
+        function fun6() {
+            console.log("鼠标离开了")
+        }
+        function fun7() {
+            console.log("键盘按下了")
+        }
+        function fun8() {
+            console.log("键盘抬起了")
+        }
+        /*1、事件绑定方式
+               1、通过元素的属性绑定  onclick 等
+               2、通过DOM编程动态绑定
+               注意事项：
+                  1、一个事件可以同时绑定多个函数
+                  2、一个元素可以绑定多个事件
+           2、常见的事件
+             1、鼠标点击事件 onclick ondblclick  onmouseover onmousemove onmouseleave
+             2、键盘事件 keydown  keyup
+             3、表单事件 onfocus  onblur onchange  onsubmit onreset
+             4、页面加载事件 onload
+           3、事件的触发
+             1、行为触发
+             2、DOM编程触发
+        */
+        function testonfocus() {
+            console.log("获得焦点")
+        }
+        function testblur() {
+            console.log("丢失焦点")
+        }
+        function testchange(value) {
+            console.log("内容改变为:" + value)
+
+        }
+        function funsubmit() {
+            /*弹窗的三种方式
+            1、alert  弹窗提示
+            2、prompt  弹输入框  返回字符串
+            3、confirm 弹确认框 返回true false
+            */
+            var flag = confirm("你是否要提交表单?")
+            if (flag == false) {
+                // event.preventDefault() //阻止组件的默认行为
+                return false  //注意使用false 和 true 时，要有阻止的效果 需要 onsubmit="return funsubmit()" 加上一个 return
+            }
+            return true
+        }
+        function funreset(){
+            console.log("表单要重置了")
+        }
+    </script>
+</head>
+
+<body>
+    <form action="01js引入方式.html" method="get" onsubmit="return funsubmit()" onreset="funreset()">
+        用户昵称<input type="text" name="rename" onfocus="testonfocus()" onblur="testblur()"
+            onchange="testchange(this.value)"><br>
+        登录账号<input type="tel" name="loginNo" value=""><br>
+        选择籍贯<select onchange="testchange(this.value)">
+            <option value="1">上海</option>
+            <option value="2">北京</option>
+            <option value="3">广州</option>
+        </select><br>
+        <input type="submit">
+        <input type="reset">
+    </form>
+    <hr>
+    <input type="button" value="按钮" onclick="fun1(),fun2()" ondblclick="fun3()">
+
+    <img src="img/女孩.png" onmouseover="fun4()" onmousemove="fun5()" onmouseleave="fun6()">
+    <br>
+    <input type="text" value="" onkeydown="fun7()" onkeyup="fun8()">
+</body>
+
+</html>

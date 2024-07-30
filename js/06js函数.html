@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>函数</title>
-  </head>
-  <script>
-    /**
-     * 函数的声明语法
-     *             方式1： function 函数名 (){}
-     *             方式2：var 函数名 = function (){}
-     */
-    function fun1() {}
-    var fun2 = function () {};
-  </script>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>函数</title>
+</head>
+<script>
+  /**
+   * 函数的声明语法
+    *             方式1： function 函数名 (){}
+    *             方式2：var 函数名 = function (){}
+    *             和Java函数的区别
+    *                     1、没有访问修饰符
+    *                     2、没有返回类型，直接return 返回
+    *                     3、没有异常列表
+    *                     4、调用方法时，实参和形参可以数量上不一致，在方法内部可以通过arguments获得调用的实参
+    *                     5、函数也可以作为一个参数 传递给另一个方法
+   */
+  function sum(a, b) {
+    return a + b;
+  }
+  function add(getSum) {
+    return getSum(20, 30)
+  }
+  var max = function (a, b) {
+    return a > b ? a : b;
+  };
+  console.log(add(sum)) //50
+  var x = sum(2, 8) //10
+  console.log(x)
+  console.log(max(3, 5)) //5
+  console.log(sum(3, 5, 8, 10)) //8
+  console.log(sum(3)) //NaN
+</script>
+
+<body></body>
+
 </html>
