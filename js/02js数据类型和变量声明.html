@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据类型和变量</title>
+    <!-- 
+        变量声明: var (弱类型 声明时不对应类型 运行时有类型 统一用var声明  ES6之后有 let const 声明)
+        数据类型：
+            数值类型  number 整数和小数
+            字符型    string
+            布尔类型  boolean
+            引用类型  Object
+            function类型 function
+            命名未赋值  undefined
+            赋值为null  Object
+        js中使用var声明变量的特点
+           1、弱类型变量，可以统一声明为var
+           2、var声明的变量可以再次声明
+           3、变量可以使用不同的数据类型多次赋值
+           4、JS语句结果可以;也可以不用;
+           5、变量标识符严格区分大小写
+           6、标识符命名规则参照java
+           7、如果使用了一个未声明的变量，那么运行时会报  Uncaught ReferenceError: I is not defined at 02js数据类型和变量声明.html:48:21
+           8、如果一个变量只声明未赋值，那么值是undefined 类型也是undefined
+     -->
+    <script>
+      var i = 10;
+      console.log(i);
+      console.log(typeof i);
+
+      var i = "sthjdsh";
+      console.log(i);
+      console.log(typeof i);
+
+      var i = true;
+      console.log(i);
+      console.log(typeof i);
+
+      var i = new Object();
+      console.log(i);
+      console.log(typeof i);
+
+      function fun1() {}
+      console.log(fun1);
+      console.log(typeof fun1);
+
+      // console.log(I)
+
+      var I;
+      console.log(I);
+      console.log(typeof I);
+      var I = null;
+      console.log(I);
+      console.log(typeof I);
+    </script>
+  </head>
+  <body></body>
+</html>

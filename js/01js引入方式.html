@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js引入方式</title>
+  </head>
+  <style>
+    input {
+      width: 200px;
+      height: 40px;
+      background-color: aquamarine;
+      color: rgb(226, 66, 2);
+      font-size: 20px;
+      font-family: "隶书";
+      border: 2px solid green;
+      border-radius: 5px;
+    }
+  </style>
+
+  <!-- JS引入方式 
+      方式1：内嵌式
+      方式2：外部引入
+      注意:
+          1、Script为双标签   不能弄成单标签  一旦搞成单标签 会自动匹配后一个标签的结尾
+          2、引入式标签中间不能写入字符  和 空格 等
+
+ -->
+  <!-- 内嵌式 -->
+  <script>
+    function superise() {
+      alert("送你一百块");
+    }
+  </script>
+  <!-- 引入式 -->
+  <script src="jsscript/superice.js"></script>
+  <body>
+    <input type="button" value="点我有惊喜" onclick="superise()" />
+    <input type="button" value="点我更惊喜" onclick="superiseMore()" />
+  </body>
+</html>
