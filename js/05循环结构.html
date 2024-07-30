@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>循环结构</title>
+  </head>
+  <script>
+    /**
+     * 普通for 循环 和Java 一致
+     * 增强for 循环 和java 不一致 :变为了in 返回的值变为了角标
+     * while 循环 和JAVA 一致
+     *
+     * document.write() 可以向网页写入数据
+     */
+    for (var i = 1; i < 10; i++) {
+      for (var j = 1; j <= i; j++) {
+        document.write(
+          i +
+            "*" +
+            j +
+            "=" +
+            i * j +
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        );
+      }
+      document.write("<br>");
+    }
+    var i = 1;
+
+    while (i < 10) {
+      var j = 1;
+      while (j <= i) {
+        document.write(
+          i +
+            "*" +
+            j +
+            "=" +
+            i * j +
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        );
+        j++;
+      }
+      document.write("<br>");
+      i++;
+    }
+    var str = [1, 2, 3];
+    for (var index in str) {
+      document.write(index + "<br>");
+      document.write(str[index] + "<br>");
+    }
+    for (const key in str) {
+      if (str.hasOwnProperty.call(str, key)) {
+        const element = str[key];
+        document.write(element + "<br>");
+      }
+    }
+  </script>
+  <body></body>
+</html>

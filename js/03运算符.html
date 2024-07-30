@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>运算符</title>
-</head>
-<script>
-    
-</script>
-<body>
-    
-</body>
+  </head>
+  <!-- 常见运算符
+       1 算数  +-*/ %
+          除0 Infinity
+          模0 NaN
+       2 复合算数 ++ -- += -= *= /= %=
+       3 关系    > < >= <= != == ====
+           ==  当类型不同时会转化为number比较是否相等
+           === 当类型不同时会直接返回false
+       4 逻辑    || &&
+       5 条件    条件表达式?值1 ：值2
+       6 位      | & << >> >>>
+    -->
+  <script>
+    console.log(10/2);
+    console.log(10/4);
+    console.log(10/0);
+    console.log(10%0);
+
+    console.log(1==1);
+    console.log(1=='1');
+    console.log(1==true);
+    console.log(1===1);
+    console.log(1==='1');
+    console.log(1===true);
+  </script>
+  <body>
+    <input type="button" value="按钮" >
+  </body>
 </html>

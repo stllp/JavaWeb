@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>分支结构</title>
+  </head>
+  <script>
+    /*
+    if 
+       大部分和Java 语法一致
+       不同点:condition 条件语句 可以写入字符数字等其它类型
+    switch
+       语法和java一致
+
+    prompt 弹出输入值 返回的是一个字符串
+    */
+    var month = Number.parseInt(prompt("请输入月份"));
+    // var month = 10;
+    if (month == 12 || month == 1 || month == 2) {
+      console.log("冬天皮肤好");
+    } else if (month >= 3 && month <= 5) {
+      console.log("春眠不觉晓");
+    } else if (month >= 6 && month <= 8) {
+      console.log("夏天蚊子咬");
+    } else if (month >= 9 && month <= 11) {
+      console.log("秋天蚊子死翘翘");
+    } else {
+      console.log("客官不得了");
+    }
+    if (1) {
+      console.log(true);
+    }
+    if ("false") {
+      console.log(true);
+    }
+    if ("") {
+      console.log(true);
+    }
+    if (null) {
+      console.log(true);
+    }
+    switch (month) {
+      case 12:
+      case 1:
+      case 2:
+        console.log("冬天皮肤好");
+        break;
+      case 3:
+      case 4:
+      case 5:
+        console.log("春眠不觉晓");
+        break;
+      case 6:
+      case 7:
+      case 8:
+        console.log("夏天蚊子咬");
+        break;
+      case 9:
+      case 10:
+      case 11:
+        console.log("秋天蚊子死翘翘");
+        break;
+      default:
+        console.log("客官不得了");
+        break;
+    }
+  </script>
+  <body></body>
+</html>
