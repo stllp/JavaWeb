@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*DOM编程
+    获取元素对象
+            getElementById
+            getElementsByName
+            getElementsByClassName
+    修改元素属性
+    innerText  修改元素的文本值
+    innerHTML  修改元素里面的html语法
+    对元素的增删改
+    增加
+    appendChild(子元素)  追加
+    insertBefore(新元素,参照元素) 在参照元素前插入
+    删除
+    firstChild 属性 第一个子元素  可循环遍历删除子元素
+    removeChild(子元素) 移除子元素
+    remove() 移除自身
+    替换
+    replaceChild(原元素,新元素)
+    */
+      window.onload = function () {
+        console.log(document.getElementById("city"));
+        var elements = document.getElementsByName("cs");
+        for (let index = 0; index < elements.length; index++) {
+          console.log(elements[index]);
+        }
+        var elements = document.getElementsByClassName("css1");
+        for (let index = 0; index < elements.length; index++) {
+          console.log(elements[index]);
+        }
+      };
+      function updateelement() {
+        var element = document.getElementById("in1");
+        element.type = "button";
+        element.value = "你猜";
+      }
+      function addbottom() {
+        var city = document.getElementById("city");
+        var elment = document.createElement("li");
+        elment.id = "cs";
+        elment.innerText = "长沙";
+        city.appendChild(elment);
+      }
+      function addbefore() {
+        var city = document.getElementById("city");
+        var elment = document.createElement("li");
+        elment.id = "cs";
+        elment.innerText = "长沙";
+        var sz = document.getElementById("sz");
+        city.insertBefore(elment, sz);
+      }
+      function remove() {
+        var city = document.getElementById("city");
+        var sz = document.getElementById("sz");
+        // city.removeChild(sz); 通过父元素删除子类
+        // sz.remove(); //子元素直接删除
+        // var lifirst = city.firstChild//循环移除子元素
+        // while(lifirst != null){
+        //   lifirst.remove()
+        //   lifirst = city.firstChild
+        // }
+        console.log(city.innerHTML)
+        city.innerHTML="" //直接江父元素里面的html语法置空
+      }
+      function repalace() {
+        var city = document.getElementById("city");
+        var elcd = document.createElement("li");
+        elcd.id = "cd";
+        elcd.innerText = "成都";
+        var elsz = document.getElementById("sz");
+        city.replaceChild(elcd, elsz);
+      }
+    </script>
+  </head>
+
+  <body>
+    <ul id="city" class="css1">
+      <li id="sh">上海</li>
+      <li id="bj">北京</li>
+      <li id="sz">深圳</li>
+      <li id="gz">广州</li>
+      <li id="cq">重庆</li>
+    </ul>
+    <br />
+    <input
+      class="css1"
+      type="button"
+      name="cs1"
+      value="后面追加"
+      style="width: 200px"
+      onclick="addbottom()"
+    />
+
+    <input
+      class="css1"
+      type="button"
+      name="cs"
+      value="插入"
+      style="width: 200px"
+      onclick="addbefore()"
+    />
+
+    <input
+      type="button"
+      name="csxx"
+      value="移除"
+      style="width: 200px"
+      onclick="remove()"
+    />
+
+    <input
+      type="button"
+      name="csx"
+      value="替换"
+      style="width: 200px"
+      onclick="repalace()"
+    />
+    <hr />
+    <input id="in1" type="text" value="" style="width: 200px" />
+
+    <input
+      type="button"
+      value="修改元素属性"
+      style="width: 200px"
+      onclick="updateelement()"
+    />
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- DOM编程绑定事件
+    方式1:在绑定标签后面写入JS绑定代码块
+    方式2:在body标签onload属性调用加载函数
+    方式3：window.onload 属性 直接加载函数  --最灵活适用
+     -->
+    <!-- <script> 方式2
+      function inonload() {
+        var element = document.getElementById("in1");
+        element.onclick = function () {
+          alert("你点击了按钮");
+        };
+      }
+    </script> -->
+    <!-- 方式3 -->
+    <script>
+      window.onload = function () {
+        var element = document.getElementById("in1");
+        element.onclick = function () {
+          alert("你点击了按钮");
+        };
+      };
+    </script>
+  </head>
+  <!-- 方式2 在body 标签上onload属性加载 <body onload="inonload()">-->
+  <body>
+    <input id="in1" type="button" value="按钮" />
+    <!-- <script>  方式1
+          var element = document.getElementById("in1");
+          element.onclick = function () {
+            alert("你点击了按钮");
+        }
+    </script> -->
+  </body>
+</html>

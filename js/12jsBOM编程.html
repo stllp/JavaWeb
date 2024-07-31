@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*BOM编程  实际就是对浏览器提供的各种组件对象进行API编程
+        1、window 窗体
+           window.alert，window.confirm,window.prompt
+           location 地址栏 location.href='https://www.baidu.com'
+           history 历史记录 history.go(1);
+           sessionStorage 会话存储  重启浏览器时就消失  sessionStorage.setItem("b1", "1111")
+           localStorage   本地存储  重启浏览器依然存在  localStorage.setItem("b2", "2222");
+                                    //清除存储
+                                    sessionStorage.clear();
+                                    localStorage.clear();
+           document html对象文档 DOM编程单据再讲
+        */
+      //   function fun1() {
+      //     window.alert("你好呀");
+      //     var flag = window.confirm("你确定要继续进行吗？");
+      //     console.log(flag);
+      //     var str = window.prompt("输入你的内容");
+      //     console.log(str);
+      //   }
+      
+      function funhistory() {
+        history.back();
+      }
+      function fungo() {
+        history.go(1);
+      }
+      function addstorage() {
+        sessionStorage.setItem("b1", "1111"); //会话级存储
+        localStorage.setItem("b2", "2222"); //本地存储 关闭浏览器之后再打开连接 属性依然存在
+        console.log(sessionStorage.getItem("b1"));
+        console.log(localStorage.getItem("b2"));
+      }
+      function clearstorage() {
+        sessionStorage.clear();
+        localStorage.clear();
+      }
+      function tzbaidu(){
+        location.href='https://www.baidu.com'
+        location.
+      }
+      
+    </script>
+  </head>
+  <body>
+    <input
+    type="button"
+    value="跳转百度"
+    style="width: 200px"
+    onclick="tzbaidu()"
+  />
+    <hr>
+    <input
+      type="button"
+      value="添加会话"
+      style="width: 200px"
+      onclick="addstorage()"
+    />
+    <input
+      type="button"
+      value="清空会话"
+      style="width: 200px"
+      onclick="clearstorage()"
+    />
+    <hr />
+    <input
+      type="button"
+      value="上一页"
+      style="width: 200px"
+      onclick="funhistory()"
+    />
+    <input
+      type="button"
+      value="下一页"
+      style="width: 200px"
+      onclick="fungo()"
+    />
+    <a href="https://www.baidu.com">百度</a>
+  </body>
+</html>
