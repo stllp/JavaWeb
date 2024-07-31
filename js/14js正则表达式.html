@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*正则表达式
+        ^开始  $ 结束  [] 单个字符 () 分组  +1到多个  ?0或者1个 
+        a-z 小写字符a到小写字母z 0-9 A-Z  同理
+        \d 数字 \D非数字
+
+        正在表达式 主要用于校验  需要用时 百度搜索 再自己稍微调试修改
+        */
+        // var regexp1 = /o/
+        // var str = "hello word"
+        // console.log(regexp1.test(str)) //true
+        // var regexp = /^java$/  //代码字符串只能是java
+        // var str1 ="I love java"
+        // var str2 ="java is my love java"
+        // console.log(regexp.test(str1)) //false
+        // console.log(regexp.test(str2)) //false
+
+        var regexp1 = /o/gi //g全局  i忽略大小写
+        var str = "helloword"
+        console.log(str.replace(regexp1, "@")) // 替换
+        console.log(str.split(regexp1)) //分割
+
+        var regexp1 = /o/g
+        var str = "helloword"
+        console.log(str.match(regexp1)) //匹配
+
+
+        var regexp = /^[0-9a-zA-Z]+@([0-9a-zA-Z]+[.])+[a-zA-Z]+/  //代码字符串只能是java
+        var str1 = "123456@163.com"
+        console.log(regexp.test(str1)) //false
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
