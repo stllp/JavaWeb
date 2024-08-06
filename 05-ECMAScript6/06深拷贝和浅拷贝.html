@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 浅拷贝
+         * 一个对象 只是拷贝了地址 
+        */
+       let arr1=[1,2,3]
+       let arr2=arr1
+       console.log(...arr2)
+       arr1[0]=20
+       console.log(...arr2)
+       /**
+        * 深拷贝
+        * 重新生成一个对象  和 原本的对象不再关联 修改原本的对象 不会影响现有对象
+       */
+      let arr3=[1,2,3]
+      let arr4=[...arr3]
+      console.log(...arr4)
+       arr3[0]=20
+       console.log(...arr4)
+
+       let person={name:"张三"}
+       let person1={...person} //方式1  解构
+       person.name="李四"
+       console.log(person1)
+       let person2=JSON.parse(JSON.stringify(person)) //方式2 格式转换
+       person.name="王五"
+       console.log(person2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

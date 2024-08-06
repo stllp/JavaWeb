@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 箭头函数的写法
+        */
+        let fun1 = function () { }//普通函数
+        let fun2 = () => { } //正常箭头函数
+        let fun3 = (x) => { }//正常一个参数的箭头函数
+        let fun4 = x => { } //一个参数的箭头函数可以去掉()
+        let fun5 = x => { console.log(100) }//正常一句函数体的箭头函数
+        let fun6 = x => console.log(100) //一条语句的函数体可以省略{}
+        let fun7 = x => { return x + 20 } //正常一条返回语句的箭头函数
+        let fun8 = x => x + 20 //一条返回语句的箭头函数可以省略{} return
+
+        console.log(fun8(20))
+
+        /**
+         * 箭头函数的关键点 this 关键字  普通函数是代表当前层  箭头函数中的this 代表当前层的上下文
+        */
+
+        let person = {
+            name: "张三",
+            age: 10,
+            eat:function(){
+                console.log(this) //person
+                console.log(this.name) //张三
+            },
+            food:()=>{
+                console.log(this) //window
+                console.log(this.name) //不存在
+            }
+        }
+        person.eat()
+        person.food()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

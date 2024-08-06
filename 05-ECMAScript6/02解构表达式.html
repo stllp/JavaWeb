@@ -5,26 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        /**
+         * 解构表达式
+         * 
+         * 注意 数据用[] 对象用{}
+        */
+        let arr = [1, 2, 3, 4, 5]
+        let [a, b, c, d, e, f] = arr
+        console.log(a, b, c, d, e, f)
+    
+        let person = {
+            name: "张三",
+            age: 18
+        }
+        let {name,age} = person
+        console.log(name, age)
+        // let {a1,n1} = person //对象的属性必须取相同的名称 不然不能取出
+        // console.log(a1, n1)
+    
+        let fun1=function([a,b,c]){
+            console.log(a,b,c)
+        }
+        fun1([1,2,3,4])
+    </script>
 </head>
-<script>
-    /**
-     * 解构表达式
-     * 
-     * 注意 数据用[] 对象用{}
-    */
-    let arr = [1, 2, 3, 4, 5]
-    let [a, b, c, d, e, f] = arr
-    console.log(a, b, c, d, e, f)
-
-    let person = {
-        name: "张三",
-        age: 18
-    }
-    let {name,age} = person
-    console.log(name, age)
-    // let {a1,n1} = person 对象的属性必须取相同的名称 不然不能取出
-    // console.log(a1, n1)
-</script>
 
 <body>
 

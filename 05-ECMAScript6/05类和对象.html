@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 类对象和JAVA 中的语法相似
+         * 注意 对象的属性没有的情况下 会直接取对象的get set 方法
+         */
+        class Person {
+            #n;//#私有话属性  不能直接访问
+            name;
+            age;
+            //getter setter 方法
+            get name() {
+                console.log("getter")
+                return this.name;
+                
+            }
+            set name(name) {
+                console.log("setter")
+                this.name = name;
+                
+            }
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            sayHello() {
+                console.log(this.name + "say hello!!!")
+            }
+            //静态方法
+            static sum(a,b){
+                return a+b
+            }
+        }
+        let p = new Person("张三", 10)
+        p.sayHello()
+
+        let p1 = new Person()
+        p1.name = "李四"
+        p1.age = 20
+        p1.sayHello()
+
+        console.log(Person.sum(10,20)) 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
