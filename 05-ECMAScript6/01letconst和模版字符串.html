@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * let 与 var 定义的不同之处
+         * let 不能重复定义
+         * let 更接近JAVA变量定义方式 有作用域的
+         * let 必须先定义后使用 不能预解析
+         * 
+         * const 相当于 java 中的 final 定义一个常量  不能进行修改  针对引用类型 地址不变就行 具体属性可以改变 比如数组添加单个值 对象修改单个属性
+         * 
+         * 模版字符串  `` 符号 使用 ${} 可嵌套变量
+        */
+        // let i = 10
+        {
+            var i = 10
+            let j = 10
+        }
+        console.log(i)
+        // console.log(j) 不能解析
+
+        const pi = 3.14
+        // pi = 5 修改报错
+        let addr1 = "上海"
+        let str = `<ul>
+                    <li></li>
+                    <li>${addr1}</li>
+                    <li></li>
+                    <li></li>
+                </ul>`
+        console.log(str)
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>
