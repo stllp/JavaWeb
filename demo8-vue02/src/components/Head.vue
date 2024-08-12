@@ -1,13 +1,12 @@
 <script setup>
 /**
- * 路由
- * 功能：页面跳转 页面切换
+ * 组件拼接
  */
-
 </script>
 
 <template>
   <div>
+    欢迎：XXX   <a href="#">退出登录</a>
   </div>
 </template>
 
