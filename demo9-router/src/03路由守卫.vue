@@ -28,21 +28,14 @@ router.beforeEach((
   console.log("beforeEach 放行了")
   console.log(from.path)
   console.log(to.path)
-  let userName = window.sessionStorage.getItem("userName")
-  if (null == userName && to.path!='/login') {
-    console.log("beforeEach 重定向")
-    next('/login')
-  } else {
-    next()
-  }
-
+  next()
 })
 /**
  * 全局后置路由守卫
  * router.afterEach
  * 在每次路由跳转后 都会执行一次
  */
-router.afterEach((to, from) => {
+router.afterEach((to,from) => {
   console.log("afterEach")
   console.log(from.path)
   console.log(to.path)
@@ -51,8 +44,18 @@ router.afterEach((to, from) => {
 
 <template>
   <div>
+    <!-- 声明式路由 -->
+    <router-link to="Home">Home页</router-link><br>
+    <router-link to="List">List页</router-link><br>
+    <router-link to="Update">Update页</router-link><br>
+    <router-link to="Add">Add页</router-link><br>
+    <router-link to="showAll">showAll页</router-link><br>
+    <!-- 编程式路由 -->
+    <button @click="goMyPath()">go</button><input type="text" v-model="myPath">
+    <hr>
     <!-- 该标签会替换成具体的.vue -->
     <router-view></router-view>
+    <hr>
   </div>
 </template>
 
