@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * promise  是异步编程的一种解决方案 是一个容器 是一个异步返回的对象
+         * 回调函数  是一种未来会执行的函数
+        */
+
+        //普通函数 按顺序执行
+        /*function fun1(){
+         console.log('fun1 invoked')
+        }
+        console.log('code1 invoked')
+        fun1()
+        console.log('code2 invoked')*/
+
+
+        //setTimeout(回调函数,2000)
+        /*
+        回调函数 是一种基于事件的自动调用的函数
+        回调函数其它的代码不会等待回调函数执行完毕
+
+        回调函数 是一种未来会执行的函数
+        */
+        function fun1() {
+            setTimeout(() => {
+                console.log('fun1 invoked')
+            }, 2000)
+        }
+
+        fun1()
+        console.log('code1 invoked')
+        console.log('code2 invoked')
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

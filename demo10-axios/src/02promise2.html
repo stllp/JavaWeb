@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * promise  是异步编程的一种解决方案 是一个容器 是一个异步返回的对象
+         * 回调函数  是一种未来会执行的函数
+         * 
+         * 
+         * resolve 函数 在回调函数中如果调用resolve方法，promise会由pending转化为resolved
+         * reject  函数 在回调函数中如果调用reject方法，promise会由pending转化为reject
+        */
+        let promise = new Promise(function (resolve, reject) {
+            console.log('function invoked')
+            //resolve("haha")
+            //reject("reject")
+            throw new Error('error message')
+        })
+
+        console.log("other code1")
+        // let promise2=promise.then(
+        //     function (value) {
+        //         //promise 转换为 resolved状态时 执行
+        //         console.log("promise success  " + value)
+        //     }
+        //     // ,  此处可以省略只用后面catch 函数
+        //     // function (value) {
+        //     //     //promise 转换为 reject状态时 执行
+        //     //     console.log("promise fail  " + value)
+        //     // }
+        // )
+
+        // promise2.catch(
+        //     function (value){
+        //         //当promise状态是reject 或者 promise出现异常时  会执行函数
+        //         console.log("promise catch  " + value)
+        //     }
+        // )
+        //可以简写为下面模式
+        let promise2=promise.then(
+            function (value) {
+                //promise 转换为 resolved状态时 执行
+                console.log("promise success  " + value)
+            }
+            // ,  此处可以省略只用后面catch 函数
+            // function (value) {
+            //     //promise 转换为 reject状态时 执行
+            //     console.log("promise fail  " + value)
+            // }
+        ).catch(
+            function (value){
+                //当promise状态是reject 或者 promise出现异常时  会执行函数
+                console.log("promise catch  " + value)
+            }
+        )
+        console.log("other code2")
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
