@@ -4,7 +4,7 @@ import instance from '../axios';
 import { reactive } from 'vue';
 let router = useRouter()
 let user = reactive({
-    userName: "",
+    username: "",
     userPwd: ""
 })
 function goLogin() {
@@ -14,8 +14,8 @@ async function checkUserName() {
     let regexp = /^[0-9a-zA-Z\u4e00-\u9fff]{2,10}$/g
     let nameEle = document.getElementById('input_username')
     let namespanEle = document.getElementById('span_username')
-    if (regexp.test(nameEle.value)&&nameEle.value!=null) {
-        let response = await instance.post("/user/findByUserName",user)
+    if (regexp.test(nameEle.value) && nameEle.value != null) {
+        let response = await instance.post("/user/findByUserName", user)
         console.log(response.data)
         namespanEle.innerText = "OK"
         return true
@@ -63,14 +63,17 @@ async function regist() {
         alert("注册失败!")
         return
     }
-    let response = await instance.post('/user/regist', user)
-    console.log(response)
-    if (response.data.code = "200") {
+    let { data } = await instance.post('/user/regist', user)
+    console.log(data)
+    if (data.code == 200) {
         alert("注册成功")
         router.push('/login')
-    } else (
-        alert("注册失败!")
-    )
+    } else if (data.code == 505) {
+        alert("账号已经被抢注!")
+    } else {
+        alert("其它未知错误!")
+    }
+
 
 }
 </script>
@@ -84,7 +87,7 @@ async function regist() {
                 <tr class="ltr">
                     <td class="td2">请输入账号:</td>
                     <td class="td1">
-                        <input id="input_username" type="text" class="ipt" v-model="user.userName"
+                        <input id="input_username" type="text" class="ipt" v-model="user.username"
                             @blur="checkUserName()">
                         <span id="span_username"></span>
                     </td>

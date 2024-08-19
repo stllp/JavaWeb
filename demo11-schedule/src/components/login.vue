@@ -4,7 +4,7 @@ import { ref, reactive } from 'vue';
 import instance from '../axios'
 const router = useRouter()
 let user = reactive({
-    userName: "",
+    username: "",
     userPwd: ""
 })
 function goRegist() {
@@ -45,12 +45,15 @@ async function login() {
     if (!checkLogin) return false
     let { data } = await instance.post('/user/login', user)
     console.log(data)
-    if (null == data) {
-        alert("登录失败!")
-        return false
+    if (data.code == 200) {
+
+        //登录成功 跳转到日程界面
+        router.push('/showSchedule')
+        return true
     }
-    //登录成功 跳转到日程界面
-    router.push('/showSchedule')
+    alert("登录失败：" + data.message)
+    return false
+
 }
 </script>
 
@@ -63,7 +66,7 @@ async function login() {
                 <tr class="ltr">
                     <td class="td2">请输入账号:</td>
                     <td class="td1">
-                        <input type="text" class="ipt" v-model="user.userName" id="input_username"
+                        <input type="text" class="ipt" v-model="user.username" id="input_username"
                             @blur="checkUserName()">
                         <span id="span_username"></span>
                     </td>
